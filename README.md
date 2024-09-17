@@ -1,4 +1,5 @@
 # yolo-v8-on-windows-11-laptop
+Note: This project is currently a work in progress as I continue to learn and develop it. Until this note is removed, all data below or within this repository should be considered incomplete and not intended for use.
 
 installation
 
