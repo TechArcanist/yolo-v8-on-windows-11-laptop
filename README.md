@@ -34,7 +34,15 @@
 
       ![Prediction Output](https://github.com/user-attachments/assets/0b47568b-d1c3-485d-8ce9-c67e243f6c7e)
 
+5 **Predict Using Live Camera**
 
+```python
+from ultralytics import YOLO
+
+model = YOLO('yolov8n.pt')
+
+results = model(source = 1, show=True , conf=0.4, save=True)
+```
 
 ---
 
