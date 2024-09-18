@@ -34,7 +34,7 @@
 
       ![Prediction Output](https://github.com/user-attachments/assets/0b47568b-d1c3-485d-8ce9-c67e243f6c7e)
 
-5 **Predict Using Live Camera**
+5. **Predict Using Live Camera**
 
 ```python
 from ultralytics import YOLO
@@ -47,7 +47,7 @@ results = model(source = 1, show=True , conf=0.4, save=True)
 
 ---
 
-6 **Video Implementation**
+6. **Video Implementation**
 ```python
 from ultralytics import YOLO
 import cv2
@@ -98,9 +98,6 @@ cv2.destroyAllWindows()
 print(f"Video saved to {output_path}")
 ```
 
+https://github.com/user-attachments/assets/d35a5f69-f8da-4a34-bc2c-918e8ceff03c
 
-<div align="center">
-    <a href="https://github.com/TechArcanist/5-Tier-Secure-Lock-System">
-        <img src="https://img.shields.io/badge/Clone_Repository-007ACC?style=for-the-badge&logo=github&logoColor=white" />
-    </a>
-</div>
+
