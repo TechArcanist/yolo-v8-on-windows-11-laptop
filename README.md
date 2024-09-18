@@ -43,6 +43,7 @@ model = YOLO('yolov8n.pt')
 
 results = model(source = 1, show=True , conf=0.4, save=True)
 ```
+![image](https://github.com/user-attachments/assets/172ae877-f2a7-4576-bc14-21c1dba66cc0)
 
 ---
 
