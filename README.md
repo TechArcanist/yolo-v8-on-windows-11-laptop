@@ -96,8 +96,98 @@ out.release()
 cv2.destroyAllWindows()
 
 print(f"Video saved to {output_path}")
-```
 
 https://github.com/user-attachments/assets/d35a5f69-f8da-4a34-bc2c-918e8ceff03c
+```
+7. Segmentation of a Video
+    Like we saw in above example it has just drawn a box around the cars but in segmentation model it tells according to the pixels . It uses **segmentation models** when you need pixel-perfect information     about objects or their boundaries.
+```python
+from ultralytics import YOLO
+
+import cv2
+
+  
+  
+
+model = YOLO("yolov8n-seg.pt")
+
+  
+
+video_path = "moving_cars.mp4"
+
+cap = cv2.VideoCapture(video_path)
+
+  
+
+if not cap.isOpened():
+
+    print(f"Error: Could not open video {video_path}")
+
+    exit()
+
+  
+
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+  
+
+output_path = "segmented_output.mp4"  
+
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+
+out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
+
+  
+
+while cap.isOpened():
+
+    success, frame = cap.read()
+
+    if success:
+
+        results = model(frame)
+
+  
+
+        annotated_frame = results[0].plot()
+
+  
+  
+
+        out.write(annotated_frame)
+
+  
+
+        cv2.imshow("YOLOv8 Segmentation", annotated_frame)
+
+  
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+
+            break
+
+    else:
+
+        break  
+
+  
+  
+
+cap.release()
+
+out.release()
+
+cv2.destroyAllWindows()
+
+  
+
+print(f"Video saved to {output_path}")
+```
+
+
 
 
